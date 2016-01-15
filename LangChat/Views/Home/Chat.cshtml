@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Chat";
+}
+
+
+<h2>Chat</h2>
+<div id="area-catch">
+</div>
+<div class="area-send">
+    <textarea id="msg"/>
+    <button id="send-server"></button>
+</div>
+@section scripts{
+    @Scripts.Render("~/bundles/signalr")
+    <script src="~/signalr/hubs"></script>
+    @Scripts.Render("~/bundles/ts/chat")
+}

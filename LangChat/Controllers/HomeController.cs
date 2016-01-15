@@ -12,5 +12,14 @@ namespace LangChat.Controllers
         {
             return View();
         }
+
+        /// <summary>
+        /// チャットをするためのサンプル
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Chat()
+        {
+            return View();
+        }
     }
 }

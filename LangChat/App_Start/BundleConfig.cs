@@ -29,6 +29,13 @@ namespace LangChat
                 "~/Scripts/app/home.viewmodel.js",
                 "~/Scripts/app/_run.js"));
 
+            //古家追加
+            bundles.Add(new ScriptBundle("~/bundles/signalr")
+                .Include("~/Scripts/jquery-signalR-{version}.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/ts/chat")
+                .IncludeDirectory("~/TypeScripts/chat", "*.js", true));
+
             // 開発と学習には、Modernizr の開発バージョンを使用します。次に、実稼働の準備が
             // できたら、http://modernizr.com にあるビルド ツールを使用して、必要なテストのみを選択します。
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
