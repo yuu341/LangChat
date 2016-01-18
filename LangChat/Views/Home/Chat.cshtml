@@ -3,16 +3,13 @@
     ViewBag.Title = "Chat";
 }
 
-
-<h2>Chat</h2>
-<div id="area-catch">
+<div id="chat--catch">
 </div>
-<div class="area-send">
-    <textarea id="msg"/>
-    <button id="send-server"></button>
+<div class="chat--send">
+    <textarea id="message"></textarea>
+    <button id="send"></button>
 </div>
+@Html.Partial("_RoomPartial")
 @section scripts{
-    @Scripts.Render("~/bundles/signalr")
-    <script src="~/signalr/hubs"></script>
     @Scripts.Render("~/bundles/ts/chat")
 }

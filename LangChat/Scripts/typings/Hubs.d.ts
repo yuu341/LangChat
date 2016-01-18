@@ -67,13 +67,11 @@ interface ChatHubServer {
       * Sends a "send" message to the ChatHub hub.
       * Contract Documentation: ---
 
-      * @param name {string} 
-
       * @param message {string} 
 
       * @return {JQueryPromise of void}
       */
-    send(name : string, message : string) : JQueryPromise<void>;
+    send( message : string) : JQueryPromise<void>;
 
 }
 

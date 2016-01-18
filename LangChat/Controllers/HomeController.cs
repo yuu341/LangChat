@@ -17,9 +17,12 @@ namespace LangChat.Controllers
         /// チャットをするためのサンプル
         /// </summary>
         /// <returns></returns>
+        [AllowAnonymous]
         public ActionResult Chat()
         {
             return View();
         }
+
+
     }
 }
