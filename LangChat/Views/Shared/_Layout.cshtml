@@ -10,22 +10,8 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body ng-app>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Language Exchange Chat", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
+    @Html.Partial("_LoginPartial")
+    <div class="container body-content fullheight">
         @RenderBody()
         @RenderSection("SPAViews", required: false)
         <hr />

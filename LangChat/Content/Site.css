@@ -1,40 +1,65 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿html {
+  height: 100%;
 }
-
+body {
+  height: 100%;
+  margin: 0;
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
 .dl-horizontal dt {
-    white-space: normal;
+  white-space: normal;
 }
-
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
-    max-width: 280px;
+  max-width: 280px;
 }
-
 /* Set padding to display errors that occur during databinding */
 .padding-error {
-    padding-top: 20px;
+  padding-top: 20px;
 }
-
 @media only screen and (max-width: 767px) {
-    .nofloat {
-        float: none;
-        padding: 10px 15px;
-    }
+  .nofloat {
+    float: none;
+    padding: 10px 15px;
+  }
 }
-
-#message{
-    
+.logo {
+  font-size: 30px;
 }
+.large {
+  font-size: 20px;
+}
+.middle {
+  font-size: 16px;
+}
+.small {
+  font-size: 14px;
+}
+.nano {
+  font-size: 10px;
+}
+.fullheight {
+  height: 100%;
+}
+.fullwidth {
+  width: 100%;
+}
+.line::after {
+  clear: both;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+/*# sourceMappingURL=Site.css.map */

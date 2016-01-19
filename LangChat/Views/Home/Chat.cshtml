@@ -3,13 +3,36 @@
     ViewBag.Title = "Chat";
 }
 
+<div class="col-sm-3 fullheight">
+    <ul class="list-unstyled ul--room__opt">
+        <li>
+            <button class="btn fullwidth btn-success">Craete+</button>
+        </li>
+        <li>
+            <input type="text" placeholder="検索" class="form-control fullwidth" ng-model="{{search}}" />
+        </li>
+    </ul>
+    <ul id="rooms" class="list-unstyled ul--room">
+        <li class="middle">
+            Test Room Logo
+        </li>
+        <li class="middle">
+            Test Room Logo
+        </li>
+        <li class="middle">
+            Test Room Logo
+        </li>
+        <li class="middle">
+            Test Room Logo
+        </li>
+    </ul>
+</div>
 <div id="chat--catch">
 </div>
-<div class="chat--send">
-    <textarea id="message"></textarea>
-    <button id="send"></button>
+<div class="chat--send line">
+    <textarea id="message" class="left form-control"></textarea>
+    <button id="send" placeholder="メッセージを入力" class="left btn btn-primary">送信</button>
 </div>
-@Html.Partial("_RoomPartial")
 @section scripts{
     @Scripts.Render("~/bundles/ts/chat")
 }
