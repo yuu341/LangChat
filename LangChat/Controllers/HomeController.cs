@@ -23,6 +23,16 @@ namespace LangChat.Controllers
             return View();
         }
 
+        /// <summary>
+        /// d3.jsで世界地図をいろいろするためのもの
+        /// </summary>
+        /// <returns></returns>
+        [AllowAnonymous]
+        public ActionResult World()
+        {
+            return View();
+        }
+
 
     }
 }

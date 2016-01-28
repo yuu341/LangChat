@@ -33,6 +33,8 @@ namespace LangChat
             bundles.Add(new ScriptBundle("~/bundles/signalr")
                 .Include("~/Scripts/signalr/jquery.signalR-{version}.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/d3")
+                .Include("~/Scripts/d3/d3.js"));
             bundles.Add(new ScriptBundle("~/bundles/angularjs")
                 .Include("~/Scripts/angularjs/angular.js")
                 .Include("~/Scripts/angularjs/angular-aria.js")
@@ -54,6 +56,9 @@ namespace LangChat
 
             bundles.Add(new ScriptBundle("~/bundles/ts/chat")
                 .IncludeDirectory("~/TypeScripts/chat", "*.js", true));
+
+            bundles.Add(new ScriptBundle("~/bundles/ts/world")
+                .Include("~/TypeScripts/world/world.js"));
 
             // 開発と学習には、Modernizr の開発バージョンを使用します。次に、実稼働の準備が
             // できたら、http://modernizr.com にあるビルド ツールを使用して、必要なテストのみを選択します。

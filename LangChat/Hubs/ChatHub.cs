@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using Microsoft.AspNet.SignalR;
 using Microsoft.AspNet.SignalR.Hubs;
+using LangChat.Models.ORM;
 
 namespace LangChat.Hubs
 {
@@ -13,5 +14,12 @@ namespace LangChat.Hubs
         {
             Clients.All.addNewMessageToPage(message);
         }
+
+        public void CreateRoom(room room)
+        {
+            var req = this.Context.Request;
+
+        }
+
     }
 }
