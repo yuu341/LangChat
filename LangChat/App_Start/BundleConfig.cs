@@ -34,7 +34,10 @@ namespace LangChat
                 .Include("~/Scripts/signalr/jquery.signalR-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/d3")
-                .Include("~/Scripts/d3/d3.js"));
+                .Include("~/Scripts/d3/d3.js")
+                .Include("~/Scripts/d3/topojson.v0.js")
+                );
+
             bundles.Add(new ScriptBundle("~/bundles/angularjs")
                 .Include("~/Scripts/angularjs/angular.js")
                 .Include("~/Scripts/angularjs/angular-aria.js")
