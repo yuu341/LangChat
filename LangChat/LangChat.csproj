@@ -333,6 +333,8 @@
     <Content Include="Scripts\d3\topojson.v0.min.js.map">
       <DependentUpon>topojson.v0.min.js</DependentUpon>
     </Content>
+    <Content Include="Content\world.json" />
+    <Content Include="Content\uk.json" />
     <None Include="Scripts\jquery\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\angularjs\i18n\angular-locale_aa-dj.js" />
     <Content Include="Scripts\angularjs\i18n\angular-locale_aa-er.js" />
@@ -1145,7 +1147,6 @@
     <Content Include="Views\Shared\_LoginPartial - コピー.cshtml" />
     <Content Include="Views\Shared\_RoomPartial.cshtml" />
     <Content Include="Views\Home\World.cshtml" />
-    <Content Include="Content\test.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

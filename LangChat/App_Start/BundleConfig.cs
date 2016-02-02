@@ -35,7 +35,7 @@ namespace LangChat
 
             bundles.Add(new ScriptBundle("~/bundles/d3")
                 .Include("~/Scripts/d3/d3.js")
-                .Include("~/Scripts/d3/topojson.v0.js")
+                .Include("~/Scripts/d3/topojson.v0.min.js")
                 );
 
             bundles.Add(new ScriptBundle("~/bundles/angularjs")
