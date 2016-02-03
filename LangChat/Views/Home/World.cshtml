@@ -3,9 +3,55 @@
     ViewBag.Title = "Chat";
 }
 
-<div id="world">
+<div>
+    <form>
+        <div class="form-inline">
+            <div class="form-group">
+                <label>国名</label>
+                <input type="text" name="countryname" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>湖沼名</label>
+                <input type="text" name="lakename" class="form-control" />
+            </div>
 
+            <div class="form-group">
+                <input class="btn btn-info" type="submit" value="検索">
+            </div>
+        </div>
+    </form>
+    <div id="container"></div>
 </div>
 @section scripts{
-    @Scripts.Render("~/bundles/ts/world")
+    <script>
+        var map = new Datamap({
+            element: document.getElementById('container'),
+            scope: "world",
+            fills: {
+                defaultFill: "#ABDDA4",
+                test:"red"
+            },
+            width: 960,
+            height:600
+        });
+
+        var list = [];
+        list.push({ country: "日本", lake: "琵琶湖", latitude: 35.14, longitude: 136.04, radius: 5, fillKey: "test" });
+        list.push({ country: "南極", lake: "ボルトン", latitude: -68.38, longitude: 78.06, radius: 5, fillKey: "test" });
+        map.bubbles(list, {
+            popupTemplate: function (geo, data) {
+                console.log(data);
+                var popup = "<div class='popup'>";
+                popup += "<div>";
+                popup += data.country;
+                popup += "</div>";
+                popup += "<div>";
+                popup += data.lake;
+                popup += "</div>";
+                popup += "</div>";
+                return popup;
+            }
+        });
+    </script>
+    @*@Scripts.Render("~/bundles/ts/world")*@
 }

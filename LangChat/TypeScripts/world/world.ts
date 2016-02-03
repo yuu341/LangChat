@@ -12,36 +12,68 @@ var path = d3.geo.path()
     .projection(projection);
 
 
-var svg = d3.select("#world").append("svg")
-    .attr({
-        "width": width,
-        "height": height
-    });
 
 
-d3.json("Content/world.json", function (error, data) {
-    console.log(data);
-    svg.append("path")
-        .datum(topojson.object(data, data.objects.subunits))
-        .attr("d", path);
+//d3.json("Content/world.json", function (error, data) {
+//    console.log(data);
+//    svg.append("path")
+//        .datum(topojson.object(data, data.objects.subunits))
+//        .attr("d", path);
 
-    svg.selectAll(".subunit")
-        .data(topojson.object(data, data.objects.subunits).geometries)
-        .enter().append("path")
-        .attr("d", path)
-        .style("fill", function (d, idx) {
-            var r: number = Math.floor(Math.random() * 255);
-            var g: number = Math.floor(Math.random() * 255);
-            var b: number = Math.floor(Math.random() * 255);
-            return "#" + r.toString(16) + g.toString(16) + b.toString(16);
-        })
-        .on("mouseover", function (d) {
+//    svg.selectAll(".subunit")
+//        .data(topojson.object(data, data.objects.subunits).geometries)
+//        .enter().append("path")
+//        .attr("d", path)
+//        .style("fill", function (d, idx) {
+//            var r: number = Math.floor(Math.random() * 255);
+//            var g: number = Math.floor(Math.random() * 255);
+//            var b: number = Math.floor(Math.random() * 255);
+//            return "#" + r.toString(16) + g.toString(16) + b.toString(16);
+//        })
+//        .on("mouseover", function (d) {
             
-        });
+//        });
 
 
     
-});
+//});
+
+console.log("");
+
+class Globe {
+    private ScreenWidth : number = 960;
+    private ScreenHeight: number = 1160;
+
+    private svg: d3.Selection<any>;
+
+    constructor() {
+    }
+
+    public zoom(): void {
+        console.log("zoom");
+    }
+
+    public load(file: string): void {
+
+        console.log("loading file[" + file + "]");
+
+        this.svg = d3.select("#world").append("svg")
+            .attr({
+                "width": this.ScreenWidth,
+                "height": this.ScreenHeight
+            });
+        d3.json(file, function (error, data) {
+        });
+    }
+
+
+    public filterCountry(name: string): void {
+    }
+
+    public filterLakes(name: string): void {
+    }
+
+}
 
 
 //地図表示

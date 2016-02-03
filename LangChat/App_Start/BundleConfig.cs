@@ -36,6 +36,7 @@ namespace LangChat
             bundles.Add(new ScriptBundle("~/bundles/d3")
                 .Include("~/Scripts/d3/d3.js")
                 .Include("~/Scripts/d3/topojson.v0.min.js")
+                .Include("~/Scripts/d3/datamaps.world.js")
                 );
 
             bundles.Add(new ScriptBundle("~/bundles/angularjs")
@@ -75,7 +76,8 @@ namespace LangChat
             bundles.Add(new StyleBundle("~/Content/css").Include(
                  "~/Content/normalize.css",
                  "~/Content/bootstrap.css",
-                 "~/Content/Site.css"));
+                 "~/Content/Site.css",
+                 "~/Content/World.css"));
         }
     }
 }
