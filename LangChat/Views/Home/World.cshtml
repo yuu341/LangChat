@@ -16,7 +16,7 @@
             </div>
 
             <div class="form-group">
-                <input class="btn btn-info" type="submit" value="検索">
+                <input class="btn btn-info" type="button" value="検索">
             </div>
         </div>
     </form>
@@ -26,17 +26,45 @@
     <script>
         var map = new Datamap({
             element: document.getElementById('container'),
-            scope: "world",
+            projection: 'mercator',
+            setProjection: function(e){
+
+                var projection = d3.geo.mercator()
+                  .center([19, -3])
+                  .rotate([4.4, 0])
+                  .scale(400)
+                  .translate([e.offsetWidth / 2, e.offsetHeight / 2]);
+                var path = d3.geo.path()
+                  .projection(projection);
+
+                return { path: path, projection: projection };
+            },
+            scope:"world",
             fills: {
                 defaultFill: "#ABDDA4",
                 test:"red"
             },
             width: 960,
-            height:600
+            height: 600
         });
 
+
+
+        var zoom = d3.behavior.zoom().on("zoom", function (d) {
+            console.log(d3.event.scale);
+            console.log(zoom.scale());
+            var r = 5 / d3.event.scale;
+            map.svg.selectAll("g").attr("transform",
+              "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+            map.svg.selectAll("g.bubbles circle")
+                .attr("r",5/d3.event.scale)
+                .style("stroke-width", 2 / d3.event.scale);
+        });
+        map.svg.call(zoom);
+        
+
         var list = [];
-        list.push({ country: "日本", lake: "琵琶湖", latitude: 35.14, longitude: 136.04, radius: 5, fillKey: "test" });
+        list.push({ country: "日本", lake: "琵琶湖", latitude: 35.14, longitude: 136.04, radius: "5px", fillKey: "test" });
         list.push({ country: "南極", lake: "ボルトン", latitude: -68.38, longitude: 78.06, radius: 5, fillKey: "test" });
         map.bubbles(list, {
             popupTemplate: function (geo, data) {
